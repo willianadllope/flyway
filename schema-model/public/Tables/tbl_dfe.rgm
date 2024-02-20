@@ -1,0 +1,22 @@
+table "public"."tbl_dfe" {
+  owner = systaxdfe
+  columns = (
+    column "id" {
+      type = bigint
+      null = NOT NULL
+      default = nextval('public.tbl_dfe_id_seq'::regclass)
+    }
+    column "mensagem" {
+      type = character varying(100)
+    }
+    column "datahora" {
+      type = timestamp without time zone
+      null = NOT NULL
+      default = now()
+    }
+    column "chave" {
+      type = character varying(36)
+    }
+  )
+}
+

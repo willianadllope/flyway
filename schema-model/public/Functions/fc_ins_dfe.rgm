@@ -1,0 +1,42 @@
+function "public"."fc_ins_dfe(character varying, character varying)" {
+  text = """
+
+	insert into tbl_dfe(mensagem, chave) values (p_mensagem, p_chave);
+"""
+  returnType = void
+  arguments = <
+    {
+      name = p_mensagem
+      type = character varying
+      mode = IN
+    }
+
+    {
+      name = p_chave
+      type = character varying
+      mode = IN
+    }
+
+  >
+  language = sql
+  owner = systaxdfe
+}
+
+function "public"."fc_ins_dfe(character varying)" {
+  text = """
+
+	insert into tbl_dfe(mensagem) values (p_mensagem);
+"""
+  returnType = void
+  arguments = <
+    {
+      name = p_mensagem
+      type = character varying
+      mode = IN
+    }
+
+  >
+  language = sql
+  owner = systaxdfe
+}
+

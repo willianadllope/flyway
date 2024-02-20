@@ -1,0 +1,17 @@
+table "public"."tbl_usuarios" {
+  owner = systaxdfe
+  columns = (
+    column "id" {
+      type = integer
+      null = NOT NULL
+      default = nextval('public.tbl_usuarios_id_seq'::regclass)
+    }
+    column "nome" {
+      type = character varying(100)
+    }
+    column "status" {
+      type = integer
+    }
+  )
+}
+
